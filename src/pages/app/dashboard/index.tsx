@@ -1,10 +1,12 @@
-import { FoodEmpty } from '@/components/FoodEmpty'
 import { FoodsList } from '@/components/FoodList'
+import { FoodListEmpty } from '@/components/FoodListEmpty'
+import { FoodListError } from '@/components/FoodListError'
 import { FoodListSkeleton } from '@/components/FoodListSkeleton'
 import { Header } from '@/components/Header'
 import { getFoods } from '@/services/requests/get-foods'
 import { useQuery } from '@tanstack/react-query'
-
+// Todo:
+// Craste a 404 page
 // - src/components/Food/index.jsx;
 // - src/components/Food/styles.js;
 // - src/components/Input/index.jsx;
@@ -33,8 +35,9 @@ export function DashboardScreen() {
   return (
     <div className="bg-background antialiased">
       <Header />
+      {isError && <FoodListError />}
       {isPending && <FoodListSkeleton />}
-      {isShowEmptyFoodsList && <FoodEmpty />}
+      {isShowEmptyFoodsList && <FoodListEmpty />}
       {isShowFoodsList && <FoodsList foods={foods} />}
     </div>
   )
