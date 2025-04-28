@@ -1,7 +1,7 @@
 import LoadingAnimation from '@/assets/animations/loading-animation.json'
 import Lottie from 'lottie-react'
 
-export function FoodEmpty() {
+export function FoodListEmpty() {
   return (
     <div className="mt-[5%] flex h-fit flex-1 flex-col items-center justify-center gap-8">
       <Lottie
